@@ -6,6 +6,7 @@
     <title>The Code Review | Newsletter Signup</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   
@@ -25,6 +26,7 @@
         </header>
 
         <section>
+          
           <fieldset>
 
             <legend>Contact Information</legend>
@@ -45,7 +47,8 @@
             <input type="text" id="city" name="user_city">
 
             <label for="state">State</label>
-            <select id="state" name="user_state">
+            <select id="state" name="user_state" required>
+              <option value="" disabled selected hidden>Choose State</option>
               <option value="alabama">Alabama</option>
               <option value="alaska">Alaska</option>
               <option value="arizona">Arizona</option>
@@ -102,29 +105,51 @@
             <input type="text" id="zip" name="user_zip">
 
           </fieldset>
+          
         </section>
         
         <section>
+          
           <fieldset>
 
             <legend>Newsletter</legend>
 
-            <label>Select the newsletters you would like to receive</label>
-            <input type="checkbox" id="html_news" value="subscribe_html" name="newsletters"><label for="html_news">HTML News</label><br>
-            <input type="checkbox" id="css_news" value="subscribe_css" name="newsletters"><label for="css_news">CSS News</label><br>
-            <input type="checkbox" id="js_news" value="subscribe_js" name="newsletters"><label for="js_news">Javascript News</label><br>
+            <p>
+              <label>Select the newsletters you would like to receive</label>
+              <ul>
+                <li>
+                  <input type="checkbox" id="html_news" value="subscribe_html" name="newsletters" checked="checked"><label for="html_news" class="light">HTML News</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="css_news" value="subscribe_css" name="newsletters"><label for="css_news" class="light">CSS News</label>
+                </li>
+                <li>
+                  <input type="checkbox" id="js_news" value="subscribe_js" name="newsletters"><label for="js_news" class="light">Javascript News</label>
+                </li>
+              </ul>
+            </p>
 
-            <label>Newsletter format</label>
-            <input type="radio" id="format_html" value="format_html" name="newsletter_format"><label for="format_html">HTML</label><br>
-            <input type="radio" id="format_plain" value="format_plain" name="newsletter_format"><label for="format_plain">Plain text</label><br>
-
+            <p>
+              <label>Newsletter format</label>
+              <ul>
+                <li>
+                  <input type="radio" id="format_html" value="format_html" name="newsletter_format" checked="checked"><label for="format_html" class="light">HTML</label>
+                </li>
+                <li>
+                  <input type="radio" id="format_plain" value="format_plain" name="newsletter_format"><label for="format_plain" class="light">Plain text</label>
+                </li>
+              </ul>
+            </p>
+            
+            <label for="topics">Other topics you'd like to hear about</label>
+            <textarea id="topics" name="topics"></textarea>
+            
           </fieldset>
+          
         </section>
         
-        <section>
-          <button type="submit">Sign Up</button>
-        </section>
-
+        <button type="submit">Sign Up</button>
+        
       </form>
       
     </main>
