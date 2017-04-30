@@ -25,30 +25,30 @@
           <p>Get the latest news on how your code is doing right in your inbox</p>
         </header>
 
-        <section class="contact_info">
-          
-          <fieldset>
+        <div class="wrapper">
+        
+          <fieldset class="contact_info">
 
             <legend>Contact Information</legend>
 
             <label for="name">Full Name</label>
-            <input type="text" id="name" name="user_name" placeholder="Required" required>
+            <input id="name" type="text" name="user_name" placeholder="Required" required>
 
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="user_email" placeholder="Required" required>
+            <input id="email" type="email" name="user_email" placeholder="Required" required>
 
             <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="user_phone">
+            <input id="phone" type="tel" name="user_phone" placeholder="Optional">
 
             <label for="address">Street Address</label>
-            <input type="text" id="address" name="user_address">
+            <input id="address" type="text" name="user_address" placeholder="Optional">
 
             <label for="city">City</label>
-            <input type="text" id="city" name="user_city">
+            <input id="city" type="text" name="user_city" placeholder="Optional">
 
             <label for="state">State</label>
             <select id="state" name="user_state" required>
-              <option value="" disabled selected hidden>Choose State</option>
+              <option value="" selected disabled hidden>Choose State</option>
               <option value="alabama">Alabama</option>
               <option value="alaska">Alaska</option>
               <option value="arizona">Arizona</option>
@@ -102,15 +102,15 @@
             </select>
 
             <label for="zip">Zip Code</label>
-            <input type="text" id="zip" name="user_zip">
+            <input id="zip" type="text" name="user_zip">
 
           </fieldset>
           
-        </section>
+        </div>
         
-        <section class="newsletter">
-          
-          <fieldset>
+        <div class="wrapper">
+      
+          <fieldset class="newsletter">
 
             <legend>Newsletter</legend>
 
@@ -130,20 +130,22 @@
             <label>Newsletter format</label>
             <ul>
               <li>
-                <input type="radio" id="format_html" value="format_html" name="newsletter_format" checked="checked"><label for="format_html" class="light">HTML</label>
+                <input id="format_html" type="radio" value="format_html" name="newsletter_format" checked="checked">
+                <label for="format_html" class="light">HTML</label>
               </li>
               <li>
-                <input type="radio" id="format_plain" value="format_plain" name="newsletter_format"><label for="format_plain" class="light">Plain text</label>
+                <input id="format_plain" type="radio" value="format_plain" name="newsletter_format">
+                <label for="format_plain" class="light">Plain text</label>
               </li>
             </ul>
-            
+
             <label for="topics">Other topics you'd like to hear about</label>
             <textarea id="topics" name="topics"></textarea>
-            
+
           </fieldset>
           
-        </section>
-        
+        </div>
+
         <button type="submit">Sign Up</button>
         
       </form>

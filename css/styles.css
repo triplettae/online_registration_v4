@@ -8,6 +8,7 @@ body {
   font-family: 'Merriweather', serif;
   color: #384047;
   margin: 0;
+  background: #f2f7f8;
 }
 
 body > header {
@@ -30,9 +31,9 @@ main {
   padding: 0 6px;
 }
 
-section {
-  margin-top: 3px;
-  padding: 24px 0 12px;
+.wrapper {
+  margin-top: 2px;
+  padding: 24px 0;
   border-top: solid black 2px;
 }
 
@@ -68,7 +69,7 @@ input[type="email"],
 input[type="tel"],
 textarea,
 select {
-  background: #eff0f1;
+  background: #e2e7e8;
   border: none;
   font-size: 16px;
   height: auto;
@@ -84,13 +85,15 @@ select {
 input:not(:focus),
 select:not(:focus),
 textarea:not(:focus) {
-  border: solid white 2px; /* Added because focus was shifting elements even though border-box was applied */
+  border: solid rgba(0,0,0,0) 2px; /* Added because focus was shifting elements due to focus border below */
+  transition: border-color .2s ease-in;
 }
 
 input:focus,
 select:focus,
 textarea:focus {
   border: solid steelblue 2px;
+  transition: border-color .2s ease-in;
 }
 
 textarea {
@@ -100,19 +103,18 @@ textarea {
 
 input[type="radio"],
 input[type="checkbox"] {
-  margin: 0 4px 8px 0;
-}
-
-select:invalid {
-  font-weight: 300;
-  color: darkgrey;
+  margin: 0 0 8px 4px;
 }
 
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  background: url(../images/arrows.png) no-repeat right 9px center, #eff0f1;
+  background: url(../images/arrows.png) no-repeat right 9px center #e2e7e8;
+  color: black;
+}
+
+select:invalid {
+  color: darkgrey;
 }
 
 input::placeholder {
@@ -190,6 +192,14 @@ footer {
     padding: 0;
   }
   
+  body > header h1 {
+    font-size: 1.2rem;
+  }
+  
+  .wrapper {
+    padding: 50px 0 30px;
+  }
+
   form > header {
     padding: 16px 0;
   }
@@ -198,20 +208,16 @@ footer {
     font-size: 1.5rem;
   }
 
-  section {
-    padding-top: 56px;
-  }
-  
   legend {
     font-size: 1.2rem;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
 
   fieldset {
     font-size: 0; /* This is to eliminate the small space between inline-block elements */
   }
   
-  section.contact_info label {
+  fieldset.contact_info label {
     font-size: 1rem;
     display: inline-block;
     width: 25%;
@@ -223,18 +229,13 @@ footer {
   select {
     display: inline-block;
     width: 75%;
-    margin-bottom: 18px;
-    padding: 20px;
+    margin-bottom: 16px;
+    padding: 18px;
     border-radius: 8px;
-  }
-  
-  section {
-    padding-bottom: 24px;
   }
   
   label {
     margin: 6px 0;
-    font-size: 1rem;
   }
   
   ul {
